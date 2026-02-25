@@ -7,29 +7,28 @@
   <title>Emporium24k — Catálogo Oficial</title>
   <meta name="description" content="Catálogo Emporium24k — Ouro 18k, Encapados e Prata 925. Escolha pela REF e chame no WhatsApp." />
 
-  <!-- META PIXEL -->
+  <!-- Meta Pixel Code (ID REAL) -->
   <script>
-    !(function(f,b,e,v,n,t,s){
-      if(f.fbq)return; n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n; n.push=n; n.loaded=!0; n.version='2.0';
-      n.queue=[]; t=b.createElement(e); t.async=!0;
-      t.src=v; s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)
-    })(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'PIXEL_ID_AQUI');
-    fbq('track', 'PageView');
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1557201585336894');
+  fbq('track', 'PageView');
   </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=PIXEL_ID_AQUI&ev=PageView&noscript=1" />
-  </noscript>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1557201585336894&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 
   <style>
     :root{
       --bg:#0b0b0b;
       --card:#111214;
-      --stroke:#26282f;
       --text:#f3f3f3;
       --muted:#b7bcc7;
       --gold1:#d6b15e;
@@ -39,6 +38,7 @@
       --maxw: 1180px;
     }
     *{ box-sizing:border-box; }
+    html,body{height:100%}
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
@@ -59,7 +59,7 @@
       margin:0 auto;
     }
 
-    /* HEADER FIXO */
+    /* HEADER */
     .header{
       position:sticky;
       top:0;
@@ -210,7 +210,6 @@
       background: linear-gradient(180deg, rgba(214,177,94,.22), rgba(214,177,94,.08));
       box-shadow: 0 14px 36px rgba(0,0,0,.45);
     }
-
     .search{
       width:min(330px, 100%);
     }
@@ -231,6 +230,13 @@
     }
 
     /* GRID */
+    .sectionTitle{
+      margin: 6px 0 0;
+      font-weight:900;
+      letter-spacing:.10em;
+      font-size:12px;
+      color:var(--gold1);
+    }
     .grid{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
@@ -286,7 +292,6 @@
       font-size:13px;
       line-height:1.35;
     }
-
     .price{
       display:flex;
       align-items:baseline;
@@ -304,7 +309,6 @@
       color:var(--muted);
       font-size:12px;
     }
-
     .btn{
       margin-top:2px;
       width:100%;
@@ -320,14 +324,6 @@
       text-decoration:none;
       font-weight:900;
       letter-spacing:.02em;
-    }
-
-    .sectionTitle{
-      margin: 6px 0 0;
-      font-weight:900;
-      letter-spacing:.10em;
-      font-size:12px;
-      color:var(--gold1);
     }
 
     /* INFO IMPORTANTES */
@@ -361,7 +357,7 @@
       opacity:.95;
     }
 
-    /* ANATÔMICA IMG */
+    /* ANATÔMICA */
     .finalImgWrap{
       margin: 10px 0 24px;
       text-align:center;
@@ -424,7 +420,6 @@
   <header class="header">
     <div class="container header__inner">
       <div class="brand">
-        <!-- LOGO NA RAIZ DO /Catalogo/: logo.png -->
         <img class="brand__logo" src="./logo.png" alt="Emporium24k" />
         <div>
           <div class="brand__title">CATÁLOGO OFICIAL</div>
@@ -492,7 +487,6 @@
 
     <section class="finalImgWrap">
       <p class="sectionTitle">FORMATO INTERNO (PADRÃO RETO)</p>
-      <!-- anatômica está na raiz do /Catalogo/: anatomica.jpeg -->
       <img class="finalImg" src="./anatomica.jpeg" alt="Diferença entre anatômico, semi-anatômico e reto" loading="lazy" />
     </section>
 
@@ -525,6 +519,7 @@
              `Padrão reto.%0A` +
              `Se desejar anatômica ou semi-anatômica, preciso consultar para recalcular.`;
     }
+
     function waLink(p){
       return `https://wa.me/${WHATSAPP_NUMBER}?text=${makeMessage(p)}`;
     }
@@ -545,13 +540,14 @@
       return v.toLocaleString("pt-BR", { style:"currency", currency:"BRL" });
     }
 
-    // IMAGENS DOS PRODUTOS NA RAIZ DO /Catalogo/: ./0001.png ...
+    // Produtos e logo/anatomica estão na raiz do /Catalogo/
     function imgPath(p){
       return `./${p.ref}.png`;
     }
 
+    // 49 produtos (0011 não existe)
     const produtos = [
-      // OURO (20 itens) — 0011 NÃO EXISTE
+      // OURO (20 itens)
       { ref:"0001", catKey:"ouro", detalhes:"Alianças 10mm • Ouro 18k • Cravejada em zircônia", vista:18750, p12:1812.00, badge:"" },
       { ref:"0002", catKey:"ouro", detalhes:"Alianças 4mm • Ouro 18k", vista:4150, p12:402.80, badge:"" },
       { ref:"0003", catKey:"ouro", detalhes:"Alianças 10mm • Ouro 18k", vista:16650, p12:1609.00, badge:"" },
@@ -574,7 +570,7 @@
       { ref:"0020", catKey:"ouro", detalhes:"Alianças 4mm • Ouro 18k • Cravejadas em zircônia", vista:4650, p12:450.00, badge:"" },
       { ref:"0021", catKey:"ouro", detalhes:"Alianças 4mm • Ouro 18k • Cravejadas em zircônia", vista:4650, p12:450.00, badge:"" },
 
-      // ENCAPADOS (7 itens)
+      // ENCAPADOS (7)
       { ref:"0022", catKey:"encapado", detalhes:"Alianças 3mm • Encapadas", vista:1050, p12:105.00, badge:"" },
       { ref:"0023", catKey:"encapado", detalhes:"Alianças 5mm • Encapadas", vista:1875, p12:187.00, badge:"" },
       { ref:"0024", catKey:"encapado", detalhes:"Alianças 4mm • Encapadas", vista:1450, p12:145.00, badge:"" },
@@ -583,7 +579,7 @@
       { ref:"0027", catKey:"encapado", detalhes:"Alianças 6mm • Encapadas", vista:2710, p12:271.00, badge:"" },
       { ref:"0028", catKey:"encapado", detalhes:"Alianças 3mm • Encapadas", vista:1050, p12:105.00, badge:"" },
 
-      // PRATA (22 itens) — valores da imagem original 0001–0022 remapeados para 0029–0050
+      // PRATA (22) — remapeadas para 0029–0050
       { ref:"0029", catKey:"prata", detalhes:"Alianças • Prata 925 • + Solitário clássico", vista:360, p12:35.00, badge:"" },
       { ref:"0030", catKey:"prata", detalhes:"Alianças • Prata 925 • + Solitário clássico", vista:280, p12:27.00, badge:"" },
       { ref:"0031", catKey:"prata", detalhes:"Alianças • Prata 925 • + Solitário clássico", vista:320, p12:31.00, badge:"" },
